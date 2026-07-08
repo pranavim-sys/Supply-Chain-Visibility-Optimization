@@ -1,14 +1,14 @@
-Milestone1
-Supply Chain Visibility And Optimization
+**Milestone1
+Supply Chain Visibility And Optimization**
 
-Objective:
+**Objective**:
 Improve supply chain visibility by tracking orders, shipping, and inventory.
 Identify inefficiencies in the supply chain process.
 Build a structured data model with fact and dimension tables.
 Enable reporting and dashboards in Power BI for better decision-making.
 Provide insights that help optimize logistics, reduce delays, and improve customer satisfaction.
 
-Dataset Source:
+**Dataset Source:**
 Download dataset from Kaggle (Supply Chain dataset).
 The dataset includes information such as:
 Orders (Order ID, Order Date, Shipping Date).
