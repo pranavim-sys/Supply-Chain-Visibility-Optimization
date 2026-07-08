@@ -1,20 +1,33 @@
 **Milestone1 - Supply Chain Visibility And Optimization**
 
 **Objective**:
+
 Improve supply chain visibility by tracking orders, shipping, and inventory.
+
 Identify inefficiencies in the supply chain process.
+
 Build a structured data model with fact and dimension tables.
+
 Enable reporting and dashboards in Power BI for better decision-making.
+
 Provide insights that help optimize logistics, reduce delays, and improve customer satisfaction.
 
 **Dataset Source:**
+
 Download dataset from Kaggle (Supply Chain dataset).
+
 The dataset includes information such as:
+
 Orders (Order ID, Order Date, Shipping Date).
+
 Customers (Customer ID, Customer Name, Location).
+
 Products (Product ID, Product Name, Category).
+
 Shipping details (Carrier, Mode, Cost).
+
 Locations and Departments.
+
 Use this dataset as the foundation for building fact and dimension tables in Power BI.
 
 Dataset link : https://www.kaggle.com/datasets/saicharankomati/dataco-supply-chain-dataset
@@ -82,23 +95,42 @@ Save transformations frequently.
 Click Close & Apply in Power Query Editor to load the cleaned and transformed data model into Power BI.
 
 **Data Model Overview:**
+
 Fact_Table → Stores transactional data (orders, shipping, product IDs, customer IDs).
+
 Dimension Tables → Provide descriptive attributes:
+
 Dim_Customer → Customer details.
+
 Dim_Product → Product details.
+
 Dim_Category → Product categories.
+
 Dim_Shipping → Shipping details with Shipping_ID.
+
 Dim_Location → Location details with Location_ID.
+
 Dim_Department → Department details.
+
 Dim_Date → Calendar table with Year, Month, Quarter, Week, Day.
+
 Relationships:
+
 Fact_Table connects to each dimension via IDs.
+
 Dim_Date connects to Fact_Table on Order Date (active) and Shipping Date (inactive).
+
 This star schema enables clear reporting and efficient queries.
 
 **Tools Used:**
+
 Power BI → For data cleaning, transformation, modeling, and visualization.
+
 Power Query Editor → For removing duplicates, creating dimension tables, and merging data.
+
 DAX (Data Analysis Expressions) → For creating Dim_Date table and calculated columns.
+
 SQL Server → For validating data consistency between source and Power BI.
+
 Kaggle Dataset → As the primary data source for supply chain operations.
+
