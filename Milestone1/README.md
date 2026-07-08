@@ -16,6 +16,7 @@ Products (Product ID, Product Name, Category).
 Shipping details (Carrier, Mode, Cost).
 Locations and Departments.
 Use this dataset as the foundation for building fact and dimension tables in Power BI.
+Dataset link : https://www.kaggle.com/datasets/saicharankomati/dataco-supply-chain-dataset
 
 **Data Cleaning and Transformation Steps:**
 
