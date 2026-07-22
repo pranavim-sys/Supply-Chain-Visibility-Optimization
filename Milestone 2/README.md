@@ -62,7 +62,7 @@ On Time Delivery % = DIVIDE (   CALCULATE ( DISTINCTCOUNT ( Fact_table[order_id]
 - **Visualization**:
   - Line charts for delivery trends.
   - Bar charts comparing carriers and regions.
-  - Heatmaps for identifying bottlenecks.
+    
 
 
 
