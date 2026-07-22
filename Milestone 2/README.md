@@ -6,9 +6,8 @@ This milestone focuses on analyzing inventory performance and delivery efficienc
 ##  Inventory Turnover Calculation Approach
 - **Definition**: Inventory turnover measures how many times inventory is sold and replaced during a given period.
 - **Formula**:  
-\[
-  \text{Inventory Turnover} = \frac{\text{Cost of Goods Sold (COGS)}}{\text{Average Inventory}}
-  \]
+Inventory turnover Ratio (units) = DIVIDE([Units Sold], AVERAGE(Fact_table[stock_qty]),0)
+
 
 
 - **Implementation in Power BI**:
@@ -16,9 +15,8 @@ This milestone focuses on analyzing inventory performance and delivery efficienc
   - Average inventory is calculated as:  
     
 
-\[
-    \frac{\text{Opening Inventory} + \text{Closing Inventory}}{2}
-    \]
+Avg inventory value = AVERAGE(Fact_table[inventory_value])
+
 
 
   - KPI cards and trend charts visualize turnover rates across product categories.
@@ -33,12 +31,15 @@ This milestone focuses on analyzing inventory performance and delivery efficienc
   - Days-in-inventory metric used to classify items:
     
 
-\[
-    \text{Days in Inventory} = \frac{365}{\text{Inventory Turnover}}
-    \]
+Stock Status =VAR DaysIdle = Fact_table[Days Since Last Sale (Col)]
+VAR Qty = Fact_table[stock_qty] RETURN
+SWITCH (    TRUE(),     Qty = 0, "Out of Stock",
+    DaysIdle > 90 && Qty > 0, "Dead Stock",
+    DaysIdle > 30 && DaysIdle <= 90, "Slow-Moving",    "Active")
 
 
-  - Products with > 180 days in inventory are flagged as slow-moving.
+
+  - Products with > 90 days in inventory are flagged as slow-moving.
 - **Visualization**:
   - Conditional formatting highlights slow-moving items in red and fast-moving items in green.
   - Category-level breakdowns show which segments contribute most to inefficiencies.
@@ -50,9 +51,8 @@ This milestone focuses on analyzing inventory performance and delivery efficienc
   - **On-Time Delivery %**:  
     
 
-\[
-    \frac{\text{On-Time Deliveries}}{\text{Total Deliveries}} \times 100
-    \]
+On Time Delivery % = DIVIDE (   CALCULATE ( DISTINCTCOUNT ( Fact_table[order_id] ), Fact_table[delivery_status] = "Shipping on time" ),   [Total Orders], 0)
+
 
 
   - **Average Delivery Delay**: Difference between promised vs actual delivery dates.
