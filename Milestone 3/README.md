@@ -2,7 +2,6 @@
 
 This milestone focuses on building a robust supply chain visibility framework using Power BI. It includes supplier scorecards, ranking and benchmarking, transportation cost analysis, and carrier performance evaluation. The goal is to provide actionable insights for improving supplier reliability, reducing transportation costs, and enhancing overall supply chain efficiency.
 
----
 
 ##  Supplier Scorecard Calculation Methodology
 - **KPIs Considered**:
@@ -20,6 +19,7 @@ This milestone focuses on building a robust supply chain visibility framework us
 -  - A weighted average is used to calculate the final supplier score.
 
 **Supplier Ranking and Benchmarking Approach**
+
 Ranking Logic: Suppliers are ranked based on a composite score that combines quality, reliability, lead time, and fulfillment capacity. This ensures that performance is measured holistically rather than on a single metric.
 
 Benchmarking: Each supplier’s score is compared against industry averages and top quartile performers. This helps identify which suppliers are leading, which are average, and which need improvement.
@@ -35,6 +35,7 @@ Tier 3 (Underperformers): Suppliers who fall below benchmarks and require correc
 Purpose: This ranking system helps prioritize supplier relationships, negotiate better contracts, and identify where supplier development programs are needed.
 
 **Transportation Cost Analysis Methodology**
+
 Cost Dimensions: Transportation costs are broken down by route, carrier, and shipping mode. This allows for granular visibility into where money is being spent.
 
 KPIs Considered: Cost per ton, cost per kilometer, total spend, and discount impact.
@@ -46,6 +47,7 @@ Profitability Check: Costs are linked to order profitability to ensure that tran
 Outcome: Identifies high-cost routes, carriers with poor cost efficiency, and opportunities to renegotiate contracts or optimize logistics.
 
 **Route and Carrier Performance Evaluation**
+
 Metrics Evaluated: On-time delivery percentage, average delay, cost efficiency, and shipping mode reliability.
 
 Carrier Benchmarking: Carriers are compared against each other to identify the most reliable and cost-effective options.
@@ -63,6 +65,7 @@ How shipping mode choices affect customer satisfaction and profitability.
 Purpose: Provides a clear view of logistics performance, enabling better carrier selection and route planning.
 
 **Key Insights and Business Recommendations**
+
 Supplier Insights:
 
 High-performing suppliers should be prioritized for critical orders.
