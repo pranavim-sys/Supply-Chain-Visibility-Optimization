@@ -1,4 +1,4 @@
-# Milestone 3 - Supply Chain Visibility and Optimization
+# Milestone 3 - Supply Chain Visibility Optimization
 
 This milestone focuses on building a robust supply chain visibility framework using Power BI. It includes supplier scorecards, ranking and benchmarking, transportation cost analysis, and carrier performance evaluation. The goal is to provide actionable insights for improving supplier reliability, reducing transportation costs, and enhancing overall supply chain efficiency.
 
@@ -17,31 +17,9 @@ This milestone focuses on building a robust supply chain visibility framework us
 - **Normalization**:
   - Each KPI is scaled to a comparable range before aggregation.
 - **Composite Score**:
-  - A weighted average is used to calculate the final supplier score.
-
-**DAX Queries:**
-```DAX
-Total Suppliers = DISTINCTCOUNT(Dim_supplier[supplier_name])
-
-Avg Quality Score = AVERAGE(Dim_supplier[quality_score])
-
-Avg Reliability % = AVERAGE(Dim_supplier[reliability_%])
-
-Avg Lead Time (Days) = 
-    AVERAGEX(
-        VALUES(Dim_supplier[supplier_name]),
-        CALCULATE(AVERAGE(Dim_supplier[lead_time_(days)]))
-    )
-
-Products Supplied = DISTINCTCOUNT(Dim_supplier[product_card_id])
-
-Orders Fulfilled (Proxy) = 
-    CALCULATE(
-        DISTINCTCOUNT(Fact_table[order_id]),
-        Fact_table[order_status] IN { "COMPLETE", "CLOSED" }
-    )
-
-🏆 Supplier Ranking and Benchmarking Approach
+-  - A weighted average is used to calculate the final supplier score.
+ 
+   - 🏆 Supplier Ranking and Benchmarking Approach
 Ranking Logic: Suppliers are ranked based on a composite score that combines quality, reliability, lead time, and fulfillment capacity. This ensures that performance is measured holistically rather than on a single metric.
 
 Benchmarking: Each supplier’s score is compared against industry averages and top quartile performers. This helps identify which suppliers are leading, which are average, and which need improvement.
@@ -110,11 +88,3 @@ Optimize shipping mode allocation to balance cost and service quality.
 Implement continuous monitoring dashboards to track supplier and carrier KPIs in real time.
 
 Use benchmarking results to guide supplier development programs and strengthen partnerships.
-
-
-
-
-
-
-           
-
