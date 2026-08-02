@@ -2,9 +2,9 @@
 
 This milestone focuses on building a robust supply chain visibility framework using Power BI. It includes supplier scorecards, ranking and benchmarking, transportation cost analysis, and carrier performance evaluation. The goal is to provide actionable insights for improving supplier reliability, reducing transportation costs, and enhancing overall supply chain efficiency.
 
+---
 
-
-##  Supplier Scorecard Calculation Methodology
+## 📊 Supplier Scorecard Calculation Methodology
 - **KPIs Considered**:
   - Quality Score (defect-free shipments)
   - Reliability % (on-time delivery consistency)
@@ -20,7 +20,7 @@ This milestone focuses on building a robust supply chain visibility framework us
   - A weighted average is used to calculate the final supplier score.
 
 **DAX Queries:**
-
+```DAX
 Total Suppliers = DISTINCTCOUNT(Dim_supplier[supplier_name])
 
 Avg Quality Score = AVERAGE(Dim_supplier[quality_score])
@@ -41,7 +41,8 @@ Orders Fulfilled (Proxy) =
         Fact_table[order_status] IN { "COMPLETE", "CLOSED" }
     )
 
-    Supplier Ranking and Benchmarking Approach
+
+🏆 Supplier Ranking and Benchmarking Approach
 Ranking Logic:
 
 Suppliers are ranked using a composite score derived from KPIs.
@@ -60,7 +61,17 @@ Tier 2: Reliable suppliers (70–85)
 
 Tier 3: Improvement needed (< 70)
 
-Transportation Cost Analysis Methodology
+DAX Queries:
+SupplierRank = 
+    RANKX(
+        ALL(Dim_supplier[supplier_name]),
+        [Avg Quality Score] + [Avg Reliability %],
+        ,
+        DESC,
+        Dense
+    )
+
+🚚 Transportation Cost Analysis Methodology
 KPIs Considered:
 
 Cost per ton
@@ -79,7 +90,18 @@ Discounts are analyzed to understand margin erosion.
 
 Profitability is assessed per order to identify high-margin vs low-margin routes.
 
-Route and Carrier Performance Evaluation
+DAX Queries:
+TransportationCostPerTon = SUM(Transportation[Cost]) / SUM(Transportation[Tons])
+
+TransportationCostPerKM = SUM(Transportation[Cost]) / SUM(Transportation[DistanceKM])
+
+Avg Profit Per Order = AVERAGE(Fact_table[order_profit_per_order])
+
+Total Discount Given = SUM(Fact_table[order_item_discount])
+
+Avg Discount Rate = AVERAGE(Fact_table[order_item_discount_rate])
+
+🛤️ Route and Carrier Performance Evaluation
 Metrics Evaluated:
 
 On-Time Deliveries %
@@ -96,7 +118,7 @@ Carriers are benchmarked by delivery reliability and cost efficiency.
 
 Shipping modes are analyzed separately to identify bottlenecks.
 
-Here are some DAX Queries
+DAX Queries:
 
 CarrierPerformanceIndex = 
     (SUM(Carrier[OnTimeDeliveries]) / SUM(Carrier[TotalDeliveries])) * 100
@@ -117,7 +139,7 @@ Late Rate by Shipping Mode =
         ALLEXCEPT(Fact_table, Fact_table[shipping_mode])
     )
 
-    Key Insights and Business Recommendations
+💡 Key Insights and Business Recommendations
 Supplier Insights:
 
 High reliability suppliers should be prioritized for critical orders.
@@ -139,5 +161,21 @@ Shift critical shipments to Tier 1 suppliers.
 Optimize shipping mode allocation to reduce late deliveries.
 
 Implement dashboards for continuous monitoring of supplier and carrier KPIs.
+
+ 
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
 
 
