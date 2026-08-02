@@ -41,141 +41,80 @@ Orders Fulfilled (Proxy) =
         Fact_table[order_status] IN { "COMPLETE", "CLOSED" }
     )
 
-
 🏆 Supplier Ranking and Benchmarking Approach
-Ranking Logic:
+Ranking Logic: Suppliers are ranked based on a composite score that combines quality, reliability, lead time, and fulfillment capacity. This ensures that performance is measured holistically rather than on a single metric.
 
-Suppliers are ranked using a composite score derived from KPIs.
+Benchmarking: Each supplier’s score is compared against industry averages and top quartile performers. This helps identify which suppliers are leading, which are average, and which need improvement.
 
-RANKX function ensures consistent ordering across suppliers.
+Tier Classification:
 
-Benchmarking:
+Tier 1 (Strategic Partners): High-performing suppliers who consistently deliver quality and reliability.
 
-Suppliers compared against industry averages and top quartile performers.
+Tier 2 (Reliable Suppliers): Adequate performers who meet expectations but have room for improvement.
 
-Tier classification:
+Tier 3 (Underperformers): Suppliers who fall below benchmarks and require corrective action.
 
-Tier 1: Strategic suppliers (score > 85)
-
-Tier 2: Reliable suppliers (70–85)
-
-Tier 3: Improvement needed (< 70)
-
-DAX Queries:
-SupplierRank = 
-    RANKX(
-        ALL(Dim_supplier[supplier_name]),
-        [Avg Quality Score] + [Avg Reliability %],
-        ,
-        DESC,
-        Dense
-    )
+Purpose: This ranking system helps prioritize supplier relationships, negotiate better contracts, and identify where supplier development programs are needed.
 
 🚚 Transportation Cost Analysis Methodology
-KPIs Considered:
+Cost Dimensions: Transportation costs are broken down by route, carrier, and shipping mode. This allows for granular visibility into where money is being spent.
 
-Cost per ton
+KPIs Considered: Cost per ton, cost per kilometer, total spend, and discount impact.
 
-Cost per kilometer
+Comparative Analysis: Routes and carriers are compared to highlight inefficiencies. For example, two carriers on the same route may have very different cost structures.
 
-Average profit per order
+Profitability Check: Costs are linked to order profitability to ensure that transportation expenses don’t erode margins.
 
-Discounts given and discount rate
-
-Methodology:
-
-Costs are aggregated at route and carrier level.
-
-Discounts are analyzed to understand margin erosion.
-
-Profitability is assessed per order to identify high-margin vs low-margin routes.
-
-DAX Queries:
-TransportationCostPerTon = SUM(Transportation[Cost]) / SUM(Transportation[Tons])
-
-TransportationCostPerKM = SUM(Transportation[Cost]) / SUM(Transportation[DistanceKM])
-
-Avg Profit Per Order = AVERAGE(Fact_table[order_profit_per_order])
-
-Total Discount Given = SUM(Fact_table[order_item_discount])
-
-Avg Discount Rate = AVERAGE(Fact_table[order_item_discount_rate])
+Outcome: Identifies high-cost routes, carriers with poor cost efficiency, and opportunities to renegotiate contracts or optimize logistics.
 
 🛤️ Route and Carrier Performance Evaluation
-Metrics Evaluated:
+Metrics Evaluated: On-time delivery percentage, average delay, cost efficiency, and shipping mode reliability.
 
-On-Time Deliveries %
+Carrier Benchmarking: Carriers are compared against each other to identify the most reliable and cost-effective options.
 
-Late Delivery Rate by Shipping Mode
+Shipping Mode Analysis: Different modes (Same Day, Standard, Express) are evaluated separately to understand their impact on late deliveries and costs.
 
-Same Day Delivery Share %
+Insights Gained:
 
-Carrier Performance Index
+Which carriers consistently meet delivery commitments.
 
-Approach:
+Which routes are prone to delays or excessive costs.
 
-Carriers are benchmarked by delivery reliability and cost efficiency.
+How shipping mode choices affect customer satisfaction and profitability.
 
-Shipping modes are analyzed separately to identify bottlenecks.
-
-DAX Queries:
-
-CarrierPerformanceIndex = 
-    (SUM(Carrier[OnTimeDeliveries]) / SUM(Carrier[TotalDeliveries])) * 100
-
-Same Day Share % = 
-    DIVIDE(
-        CALCULATE(
-            DISTINCTCOUNT(Fact_table[order_id]),
-            Fact_table[shipping_mode] = "Same Day"
-        ),
-        [Total Orders],
-        0
-    )
-
-Late Rate by Shipping Mode = 
-    CALCULATE(
-        [Late Delivery %],
-        ALLEXCEPT(Fact_table, Fact_table[shipping_mode])
-    )
+Purpose: Provides a clear view of logistics performance, enabling better carrier selection and route planning.
 
 💡 Key Insights and Business Recommendations
 Supplier Insights:
 
-High reliability suppliers should be prioritized for critical orders.
+High-performing suppliers should be prioritized for critical orders.
 
-Suppliers with long lead times need process optimization.
+Suppliers with long lead times or poor reliability need targeted improvement plans.
 
 Transportation Insights:
 
-Certain routes show high cost per ton due to inefficient carrier allocation.
+Certain routes are disproportionately expensive and need optimization.
 
-Discounts are eroding margins on specific product categories.
+Discounts are eroding margins in specific product categories.
+
+Same Day shipping has higher costs but boosts customer satisfaction.
 
 Recommendations:
 
-Negotiate better terms with carriers showing high costs but low reliability.
+Negotiate better terms with carriers that have high costs but low reliability.
 
-Shift critical shipments to Tier 1 suppliers.
+Shift critical shipments to Tier 1 suppliers to reduce risk.
 
-Optimize shipping mode allocation to reduce late deliveries.
+Optimize shipping mode allocation to balance cost and service quality.
 
-Implement dashboards for continuous monitoring of supplier and carrier KPIs.
+Implement continuous monitoring dashboards to track supplier and carrier KPIs in real time.
 
- 
-
-
+Use benchmarking results to guide supplier development programs and strengthen partnerships.
 
 
 
 
 
 
-
-
-    
-
-
-
-
+           
 
