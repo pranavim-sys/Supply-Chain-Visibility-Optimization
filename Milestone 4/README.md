@@ -1,4 +1,4 @@
-# Milestone 4: Supply Chain Visibility & Optimization
+# Milestone 4: Supply Chain Visibility system & Optimization Analysis
 
 This milestone focuses on developing the Warehouse Efficiency Dashboard and the Executive Dashboard in Power BI.
 
