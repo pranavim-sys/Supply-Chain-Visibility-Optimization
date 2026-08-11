@@ -1,4 +1,4 @@
-**SUPPLY CHAIN VISIBILITY AND OPTIMIZATION**
+#**MILESTONE 4 - SUPPLY CHAIN VISIBILITY AND OPTIMIZATION**
 
 **Warehouse utilization**
 Warehouse utilization calculation is a way to measure how efficiently the available storage space in a warehouse is being used.
