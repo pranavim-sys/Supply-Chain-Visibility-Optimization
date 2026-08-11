@@ -1,5 +1,27 @@
 # Milestone 4: Supply Chain Visibility & Optimization
 
+This milestone focuses on developing the Warehouse Efficiency Dashboard and the Executive Dashboard in Power BI.
+
+**Warehouse Efficiency Dashboard**
+
+Focuses on operational performance inside the warehouse.
+
+Tracks metrics like warehouse utilization, throughput, labor productivity, order accuracy, and cycle times.
+
+Helps managers identify bottlenecks, monitor daily operations, and improve efficiency at the ground level.
+
+It’s more detailed and tactical, designed for supervisors and operations teams.
+
+**Executive Dashboard**
+
+Provides a high-level view for leadership.
+
+Summarizes critical KPIs such as overall supply chain costs, service levels, forecast accuracy, and efficiency trends.
+
+Uses simple, visual layouts (gauges, charts, scorecards) to highlight exceptions and strategic insights.
+
+Helps executives make quick, data-driven decisions without diving into operational details.
+
 # Warehouse utilization
 
 Warehouse utilization calculation is a way to measure how efficiently the available storage space in a warehouse is being used.
