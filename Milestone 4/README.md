@@ -31,7 +31,7 @@ Purpose: To give executives a snapshot of critical KPIs (like warehouse utilizat
 
 Principles: Keep it simple, role-based, and focused on actionable insights rather than raw data.
 
-Design Steps:
+##Design Steps:##
 
 Identify the most important KPIs for decision-making.
 
