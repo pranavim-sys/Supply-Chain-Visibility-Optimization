@@ -1,6 +1,7 @@
 # Milestone 4: Supply Chain Visibility & Optimization
 
-**Warehouse utilization**
+# Warehouse utilization
+
 Warehouse utilization calculation is a way to measure how efficiently the available storage space in a warehouse is being used.
 
 It is calculated by comparing the amount of space currently occupied (such as pallets, bins, or racks filled with goods) against the total available storage capacity.
@@ -11,7 +12,7 @@ If utilization is too high (above ~85%), it can cause congestion, reduce efficie
 
 The ideal range is usually 70–85%, balancing efficiency with flexibility for incoming goods.
 
-**Throughput and productivity KPIs**
+# Throughput and productivity KPIs
 
 Throughput and productivity KPIs are used to measure how efficiently a warehouse or operation is performing.
 
@@ -23,7 +24,7 @@ Throughput = speed of work (how much gets done in a time frame).
 
 Productivity = efficiency of work (how much each worker contributes).
 
-**An executive dashboard design methodology**
+# An executive dashboard design methodology
 
 An executive dashboard design methodology is about creating a clear, high-level view of business performance that helps leaders make quick, informed decisions.
 
@@ -41,7 +42,7 @@ Provide drill-down options for deeper analysis when needed.
 
 Ensure consistency in layout, colors, and data sources.
 
-**A forecasting implementation approach**
+A forecasting implementation approach
 
 A forecasting implementation approach is the structured way of predicting future warehouse or business performance using historical data and analytical models.
 
@@ -61,7 +62,7 @@ Outputs: Demand forecasts, labor requirement forecasts, and warehouse space util
 
 Benefit: Helps reduce costs, avoid bottlenecks, and improve service levels by preparing for future demand.
 
-**Dashboard optimization techniques**
+# Dashboard optimization techniques
 
 Dashboard optimization techniques are methods used to make dashboards faster, easier to use, and more effective for decision-making.
 
@@ -73,11 +74,11 @@ User Experience: Add interactive filters (like date, product, region), ensure mo
 
 Security & Access: Provide role-based access so each user sees only relevant data.
 
-**Key insights and business recommendations**
+# Key insights and business recommendations
 
 Key insights and business recommendations are the actionable takeaways derived from analyzing warehouse data and KPIs.
 
-Key Insights:
+**Key Insights:**
 
 High warehouse utilization (above ~85%) can cause congestion and slow operations.
 
@@ -87,7 +88,7 @@ Forecast accuracy directly impacts inventory costs and service levels.
 
 Balanced throughput ensures smooth order fulfillment without overloading staff.
 
-Business Recommendations:
+**Business Recommendations:**
 
 Maintain utilization between 70–85% for efficiency and flexibility.
 
